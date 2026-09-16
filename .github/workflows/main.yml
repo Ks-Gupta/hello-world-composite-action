@@ -4,12 +4,15 @@ jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
+
     steps:
       - uses: actions/checkout@v6
+
       - id: foo
-        uses: Ks-Gupta/hello-world-composite-action@SHA
+        uses: Ks-Gupta/hello-world-composite-action@v1
         with:
           who-to-greet: 'Khushi'
+
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
